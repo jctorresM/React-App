@@ -2,9 +2,9 @@ import axios from 'axios';
 
 const instance = axios.create();
 
-const get = async (endpoint, baseURL = 'https://torre.co/api') => {
+const get = async (endpoint) => {
     try {
-        return await instance.get(`${baseURL}/${endpoint}`, {
+        return await instance.get(endpoint, {
             headers: {
                 'access-Control-Allow-Origin': '*',
             }
@@ -27,7 +27,7 @@ const getOpportunities = async (offset = 1, size = 10) => {
 }
 
 const getOpportunity = async (id) => {
-    return await get(`opportunities/${id}`);
+    return await get(`https://torre.co/api/opportunities/${id}`);
 }
 
 const getPeople = async (offset = 1, size = 20) => {
@@ -35,7 +35,7 @@ const getPeople = async (offset = 1, size = 20) => {
 }
 
 const getProfile = async (userName) => {
-    return await get(`bios/${userName}`, "https://torre.bio/api");
+    return await get(`https://torre.bio/api/bios/${userName}`);
 }
 
 export { getOpportunities, getOpportunity, getPeople, getProfile };
