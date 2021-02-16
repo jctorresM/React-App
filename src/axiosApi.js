@@ -35,7 +35,7 @@ const getPeople = async (offset = 1, size = 20) => {
 }
 
 const getProfile = async (userName) => {
-    return await get(`bios/${userName}`, "http://bio.torre.co/api/");
+    return await get(`bios/${userName}`, "https://bio.torre.co/api/");
 }
 
 export { getOpportunities, getOpportunity, getPeople, getProfile };
