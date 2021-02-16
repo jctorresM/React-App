@@ -40,11 +40,11 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 const Opportunity = () => {
+    const { id } = useParams();
     const [data, setData] = useState();
     const classes = useStyles();
 
     useEffect(async () => {
-        const { id } = useParams();
         const opportunity = await getOpportunity(id || "VWYgbvdN");
         console.log(opportunity);
         setData(opportunity.data);
