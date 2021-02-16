@@ -95,7 +95,7 @@ const Profile = props => {
                                     <strong>Résumé</strong>     
                                 </Typography>
                                 {
-                                    data.experiences.filter(x => x.category === 'jobs').map((exp) => (
+                                    data.jobs.map((exp) => (
                                         <>
                                             <Divider ></Divider>
                                             <Box pt={2}></Box>
@@ -103,7 +103,7 @@ const Profile = props => {
                                                 <strong>{exp.name}</strong>
                                             </Typography>
                                             <Typography variant='subtitle2' align='left'>
-                                                <strong>{exp.organizations[0].name}</strong>
+                                            {exp.organizations[0] && <strong>{exp.organizations[0].name}</strong>}
                                             </Typography>
                                             <Typography paragraph variant='subtitle2' align='left'>
                                                 { exp.toYear ?
