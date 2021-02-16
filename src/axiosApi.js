@@ -7,7 +7,6 @@ const get = async (endpoint, baseURL = 'https://torre.co/api') => {
         return await instance.get(`${baseURL}/${endpoint}`, {
             headers: {
                 'access-Control-Allow-Origin': '*',
-                'access-control-allow-origin': 'https://bio.torre.co'
             }
         });
     } catch (e) {
@@ -36,7 +35,7 @@ const getPeople = async (offset = 1, size = 20) => {
 }
 
 const getProfile = async (userName) => {
-    return await get(`bios/${userName}`, "https://bio.torre.co/api/");
+    return await get(`bios/${userName}`, "http://bio.torre.co/api/");
 }
 
 export { getOpportunities, getOpportunity, getPeople, getProfile };
