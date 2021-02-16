@@ -41,11 +41,11 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 const Profile = props => {
-    const { id } = useParams();
     const [data, setData] = useState();
     const classes = useStyles();
 
     useEffect(async () => {
+        const { id } = useParams();
         const profile = await getProfile(id || "jctorresmorales90");
         setData(profile.data);
     }, []);
