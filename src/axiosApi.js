@@ -6,7 +6,8 @@ const get = async (endpoint, baseURL = 'https://torre.co/api') => {
     try {
         return await instance.get(`${baseURL}/${endpoint}`, {
             headers: {
-                'Access-Control-Allow-Origin': '*'
+                'access-Control-Allow-Origin': '*',
+                'access-control-allow-origin': 'https://bio.torre.co'
             }
         });
     } catch (e) {
