@@ -17,17 +17,17 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
-        padding: theme.spacing(2)
+        maxWidth: 900,
+        display: "inline-block"
     },
     avatar: {
-        height: '75px', 
-        width: '75px'
+        height: '65px', 
+        width: '65px'
     },
     cardHeader: {
         textAlign: 'left'
     },
     card: {
-        maxWidth: 850,
         textAlign: 'left'
     },
     content: {
@@ -63,9 +63,6 @@ const JobList = props => {
             <Grid
                 container
                 spacing={2}
-                direction="row"
-                justify="center"
-                alignItems="center"
             >
                 {Array.isArray(data) && data.map((elem, i) => (
                     <Grid item xs={12} sm={11} md={11} lg={10} xl={8}  key={data.indexOf(elem)}>                       
@@ -75,7 +72,7 @@ const JobList = props => {
                                     avatar= {<Avatar className={classes.avatar} alt="U" src={elem.organizations[0].picture || placeHolderAvatar} />}
                                     title={elem.objective}
                                     subheader={elem.organizations[0].name}
-                                    titleTypographyProps = {{variant : 'h5'}}
+                                    titleTypographyProps = {{variant : 'h6'}}
                                     subheaderTypographyProps = {{variant : 'h6'}}
                                     className={classes.cardHeader}
                                 />

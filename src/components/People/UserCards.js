@@ -15,11 +15,12 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
-        padding: theme.spacing(2)
+        maxWidth: 1200,
+        display: "inline-block"
     },
     avatar: {
-        height: '75px', 
-        width: '75px'
+        height: '60px', 
+        width: '60px'
     },
     cardHeader: {
         textAlign: 'left'
@@ -45,19 +46,19 @@ const UserCards = props => {
         <div className={classes.root}>
             <Grid
                 container
-                spacing={2}
+                spacing={1}
                 direction="row"
                 justify="flex-start"
                 alignItems="flex-start"
             >
                 {data ? data.map(elem => (
-                    <Grid item xs={12} sm={6} md={4} key={data.indexOf(elem)}>
-                        <Card >
+                    <Grid item xs={12} sm={12} md={6} lg={4} key={data.indexOf(elem)}>
+                        <Card>
                             <CardHeader
                                 avatar= {<Avatar className={classes.avatar} alt="U" src={elem.picture || placeHolderAvatar} />}
                                 title={elem.name}
                                 subheader={elem.locationName}
-                                titleTypographyProps = {{variant : 'h5'}}
+                                titleTypographyProps = {{variant : 'h6'}}
                                 className={classes.cardHeader}
                             />
                             <CardContent>
